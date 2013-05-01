@@ -7,7 +7,6 @@
             <appendix>It also adds a few other helpful mappings.</appendix>
             <appendix>It requires the Unicode Hex Input keyboard layout for the Greek and Math layers.</appendix>
 
-            <% if @force_correct_shift_keys %>
             <item>
                 <name>Force yourself to use the correct shift keys.</name>
                 <identifier>space_cadet.force_correct_shifts</identifier>
@@ -43,8 +42,6 @@
                 <autogen>--KeyToKey-- KeyCode::DOT,       ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
                 <autogen>--KeyToKey-- KeyCode::QUOTE,     ModifierFlag::SHIFT_R, KeyCode::VK_NONE</autogen>
             </item>
-            <% end %>
-            <% if @shifts_to_parentheses %>
             <item>
                 <name>Shifts to Parentheses</name>
                 <appendix>Shifts, when pressed alone, type parentheses.</appendix>
@@ -70,8 +67,6 @@
                 -->
                 <autogen>--KeyToKey-- KeyCode::SPACE, ModifierFlag::SHIFT_R, KeyCode::KEY_0, ModifierFlag::SHIFT_L, KeyCode::SPACE</autogen>
             </item>
-            <% end %>
-            <% if @left_control_to_hyper %>
             <item>
                 <name>Remap Left Control to Hyper</name>
                 <appendix>OS X doesn't have a Hyper. This maps Left Control to Control + Shift + Option + Command.</appendix>
@@ -87,8 +82,6 @@
                     ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L
                 </autogen>
             </item>
-            <% end %>
-            <% if @math_layer || @greek_layer %>
             <item>
                 <name>Restore [Shift-]Opt-(Left/Right)</name>
                 <appendix>The Unicode Hex Input keyboard layout disables these keys for some reason.</appendix>
@@ -124,9 +117,7 @@
                     ModifierFlag::OPTION_L | ModifierFlag::CONTROL_L
                 </autogen>
             </item>
-            <% end %>
 
-            <% if @math_layer %>
             <item>
                 <name>Math Layer</name>
                 <appendix>Right Control key activates the Math key layer.</appendix>
@@ -641,8 +632,6 @@
 
 
             </item>
-            <% end %>
-            <% if @greek_layer %>
             <item>
                 <name>Greek Layer</name>
                 <appendix>Right PC Application key activates the Greek key layer.</appendix>
@@ -1125,7 +1114,6 @@
                 </autogen>
 
             </item>
-            <% end %>
         </item>
     </list>
 </root>
