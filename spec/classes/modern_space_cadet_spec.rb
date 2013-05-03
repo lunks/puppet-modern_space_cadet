@@ -2,15 +2,7 @@ require 'spec_helper'
 
 describe 'modern_space_cadet' do
   it do
-    should contain_file('/tmp/capslock-to-control.scpt').with({
-      :source => 'puppet:///modules/modern_space_cadet/capslock-to-control.scpt',
-      :ensure => 'present'
-    })
-
-    should contain_exec('capslock to control').with({
-      :command => '/usr/bin/osascript /tmp/capslock-to-control.scpt',
-      :require => 'File[/tmp/capslock-to-control.scpt]'
-    })
+    should contain_exec('capslock to control')
 
     should include_class('pckeyboardhack')
     should include_class('pckeyboardhack::login_item')

@@ -15,7 +15,7 @@ class modern_space_cadet(
   $left_control_to_hyper_val = $left_control_to_hyper ? { true => 1, false => 0 }
   $force_correct_shifts_val = $force_correct_shifts   ? { true => 1, false => 0 }
   $shifts_to_parens_val = $shifts_to_parens           ? { true => 1, false => 0 }
-  $fix_opt_arrows_val = $fix_opt_arrows_val           ? { true => 1, false => 0 }
+  $fix_opt_arrows_val = $fix_opt_arrows               ? { true => 1, false => 0 }
   $math_layer_val = $math_layer                       ? { true => 1, false => 0 }
   $greek_layer_val = $greek_layer                     ? { true => 1, false => 0 }
 
@@ -26,14 +26,10 @@ class modern_space_cadet(
   include keyremap4macbook::login_item
 
   if ($capslock_to_control_plus_escape) {
-    file { '/tmp/capslock-to-control.scpt':
-      ensure => 'present',
-      source => 'puppet:///modules/modern_space_cadet/capslock-to-control.scpt'
-    }
-
+    $script = caps_to_control_script()
     exec { 'capslock to control':
-      command => '/usr/bin/osascript /tmp/capslock-to-control.scpt',
-      require => File['/tmp/capslock-to-control.scpt']
+      command => $script,
+      user    => $::boxen_user
     }
 
     keyremap4macbook::remap{ 'controlL2controlL_escape': }
@@ -44,7 +40,7 @@ class modern_space_cadet(
     pckeyboardhack::bind { 'left control to F19': mappings => { 'control_l' => 80 } }
   }
 
-  keyremap4macbook::set{ 'space_cadet.left_control_to_hyper': value => $left_control_to_hyper }
+  keyremap4macbook::set{ 'space_cadet.left_control_to_hyper': value => $left_control_to_hyper_val }
   keyremap4macbook::set{ 'space_cadet.force_correct_shifts':  value => $force_correct_shifts_val }
   keyremap4macbook::set{ 'space_cadet.shifts_to_parens':      value => $shifts_to_parens_val }
   keyremap4macbook::set{ 'space_cadet.fix_opt_arrows':        value => $fix_opt_arrows_val }
