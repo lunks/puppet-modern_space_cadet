@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/rodjek/librarian-puppet.git
+  revision: b707b1e609a1806e09fdce0a9d5c872a16ba1e20
+  specs:
+    librarian-puppet (0.9.9)
+      json
+      thor (~> 0.15)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -27,9 +35,6 @@ GEM
     highline (1.6.15)
     json (1.7.7)
     json_pure (1.7.7)
-    librarian-puppet (0.9.8)
-      json
-      thor (~> 0.15)
     metaclass (0.0.1)
     mocha (0.13.3)
       metaclass (~> 0.0.1)
@@ -63,10 +68,11 @@ GEM
     rspec-mocks (2.13.0)
     rspec-puppet (0.1.6)
       rspec
-    thor (0.17.0)
+    thor (0.18.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   cardboard (~> 1.0)
+  librarian-puppet (~> 0.9.9)!

@@ -26,19 +26,21 @@ class modern_space_cadet(
   include keyremap4macbook::login_item
 
   if ($capslock_to_control_plus_escape) {
-    $script = caps_to_control_script()
-    exec { 'capslock to control':
-      command => $script,
-      user    => $::boxen_user
-    }
-
     keyremap4macbook::remap{ 'controlL2controlL_escape': }
     keyremap4macbook::set{ 'parameter.keyoverlaidmodifier_timeout': value => 300 }
+
+    $capslock_mappings = { 'capslock' => 59 }
+  } else {
+    $capslock_mappings = { }
   }
 
   if ($left_control_to_hyper) {
-    pckeyboardhack::bind { 'left control to F19': mappings => { 'control_l' => 80 } }
+    $hyper_mappings = { 'control_l' => 80 }
+  } else {
+    $hyper_mappings = { }
   }
+
+  pckeyboardhack::bind{ 'pckeyboardhack mappings': mappings => merge($hyper_mappings, $capslock_mappings) }
 
   keyremap4macbook::set{ 'space_cadet.left_control_to_hyper': value => $left_control_to_hyper_val }
   keyremap4macbook::set{ 'space_cadet.force_correct_shifts':  value => $force_correct_shifts_val }

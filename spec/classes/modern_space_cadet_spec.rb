@@ -2,12 +2,11 @@ require 'spec_helper'
 
 describe 'modern_space_cadet' do
   it do
-    should contain_exec('capslock to control')
-
     should include_class('pckeyboardhack')
     should include_class('pckeyboardhack::login_item')
-    should contain_pckeyboardhack__bind('left control to F19').with({
-      :mappings => { 'control_l' => '80' }
+
+    should contain_pckeyboardhack__bind('pckeyboardhack mappings').with({
+      :mappings => { 'control_l' => '80', 'capslock' => '59' }
     })
 
     should include_class('keyremap4macbook')
