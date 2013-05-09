@@ -13,11 +13,11 @@ class modern_space_cadet(
   $greek_layer                     = true
 ) {
   $left_control_to_hyper_val = $left_control_to_hyper ? { true => 1, false => 0 }
-  $force_correct_shifts_val = $force_correct_shifts   ? { true => 1, false => 0 }
-  $shifts_to_parens_val = $shifts_to_parens           ? { true => 1, false => 0 }
-  $fix_opt_arrows_val = $fix_opt_arrows               ? { true => 1, false => 0 }
-  $math_layer_val = $math_layer                       ? { true => 1, false => 0 }
-  $greek_layer_val = $greek_layer                     ? { true => 1, false => 0 }
+  $force_correct_shifts_val  = $force_correct_shifts  ? { true => 1, false => 0 }
+  $shifts_to_parens_val      = $shifts_to_parens      ? { true => 1, false => 0 }
+  $fix_opt_arrows_val        = $fix_opt_arrows        ? { true => 1, false => 0 }
+  $math_layer_val            = $math_layer            ? { true => 1, false => 0 }
+  $greek_layer_val           = $greek_layer           ? { true => 1, false => 0 }
 
   include pckeyboardhack
   include pckeyboardhack::login_item
