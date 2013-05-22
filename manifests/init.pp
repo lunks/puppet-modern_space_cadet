@@ -49,5 +49,5 @@ class modern_space_cadet(
   keyremap4macbook::set{ 'space_cadet.math_layer':            value => $math_layer_val }
   keyremap4macbook::set{ 'space_cadet.greek_layer':           value => $greek_layer_val }
 
-  keyremap4macbook::private_xml{ 'private.xml': content => 'puppet:///modules/modern_space_cadet/private.xml' }
+  keyremap4macbook::private_xml{ 'private.xml': source => 'puppet:///modules/modern_space_cadet/private.xml' }
 }
