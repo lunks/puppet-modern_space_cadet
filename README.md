@@ -1,6 +1,6 @@
 # A modern space cadet
 
-[![Build Status](https://travis-ci.org/boxen/puppet-modern_space_cadet.svg?=master)](https://travis-ci.org/boxen/puppet-modern_space_cadet)
+[![Build Status](https://travis-ci.org/boxen/puppet-modern_space_cadet.svg?branch=master)](https://travis-ci.org/boxen/puppet-modern_space_cadet)
 
 Sets up your keyboard along the lines of [the modern space
 cadet](http://stevelosh.com/blog/2012/10/a-modern-space-cadet/)
