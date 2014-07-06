@@ -19,8 +19,8 @@ class modern_space_cadet(
   $math_layer_val            = $math_layer            ? { true => 1, false => 0 }
   $greek_layer_val           = $greek_layer           ? { true => 1, false => 0 }
 
-  include pckeyboardhack
-  include pckeyboardhack::login_item
+  include seil
+  include seil::login_item
 
   include keyremap4macbook
   include keyremap4macbook::login_item
@@ -40,7 +40,7 @@ class modern_space_cadet(
     $hyper_mappings = { }
   }
 
-  pckeyboardhack::bind{ 'pckeyboardhack mappings': mappings => merge($hyper_mappings, $capslock_mappings) }
+  seil::bind{ 'seil mappings': mappings => merge($hyper_mappings, $capslock_mappings) }
 
   keyremap4macbook::set{ 'space_cadet.left_control_to_hyper': value => $left_control_to_hyper_val }
   keyremap4macbook::set{ 'space_cadet.force_correct_shifts':  value => $force_correct_shifts_val }

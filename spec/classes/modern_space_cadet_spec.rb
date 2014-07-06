@@ -2,10 +2,10 @@ require 'spec_helper'
 
 describe 'modern_space_cadet' do
   it do
-    should include_class('pckeyboardhack')
-    should include_class('pckeyboardhack::login_item')
+    should include_class('seil')
+    should include_class('seil::login_item')
 
-    should contain_pckeyboardhack__bind('pckeyboardhack mappings').with({
+    should contain_seil__bind('seil mappings').with({
       :mappings => { 'control_l' => '80', 'capslock' => '59' }
     })
 
