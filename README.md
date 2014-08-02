@@ -15,9 +15,8 @@ include modern_space_cadet
 
 * `boxen`
 * `osx`
-* `glarizza/puppet-property_list_key`
-* `boxen/puppet-pckeyboardhack`
-* `boxen/puppet-keyremap4macbook`
+* `boxen/puppet-seil`
+* `boxen/puppet-karabiner`
 
 ## Development
 

@@ -22,12 +22,11 @@ class modern_space_cadet(
   include seil
   include seil::login_item
 
-  include keyremap4macbook
-  include keyremap4macbook::login_item
+  include karabiner
 
   if ($capslock_to_control_plus_escape) {
-    keyremap4macbook::remap{ 'controlL2controlL_escape': }
-    keyremap4macbook::set{ 'parameter.keyoverlaidmodifier_timeout': value => 300 }
+    karabiner::remap{ 'controlL2controlL_escape': }
+    karabiner::set{ 'parameter.keyoverlaidmodifier_timeout': value => 300 }
 
     $capslock_mappings = { 'capslock' => 59 }
   } else {
@@ -42,12 +41,12 @@ class modern_space_cadet(
 
   seil::bind{ 'seil mappings': mappings => merge($hyper_mappings, $capslock_mappings) }
 
-  keyremap4macbook::set{ 'space_cadet.left_control_to_hyper': value => $left_control_to_hyper_val }
-  keyremap4macbook::set{ 'space_cadet.force_correct_shifts':  value => $force_correct_shifts_val }
-  keyremap4macbook::set{ 'space_cadet.shifts_to_parens':      value => $shifts_to_parens_val }
-  keyremap4macbook::set{ 'space_cadet.fix_opt_arrows':        value => $fix_opt_arrows_val }
-  keyremap4macbook::set{ 'space_cadet.math_layer':            value => $math_layer_val }
-  keyremap4macbook::set{ 'space_cadet.greek_layer':           value => $greek_layer_val }
+  karabiner::set{ 'space_cadet.left_control_to_hyper': value => $left_control_to_hyper_val }
+  karabiner::set{ 'space_cadet.force_correct_shifts':  value => $force_correct_shifts_val }
+  karabiner::set{ 'space_cadet.shifts_to_parens':      value => $shifts_to_parens_val }
+  karabiner::set{ 'space_cadet.fix_opt_arrows':        value => $fix_opt_arrows_val }
+  karabiner::set{ 'space_cadet.math_layer':            value => $math_layer_val }
+  karabiner::set{ 'space_cadet.greek_layer':           value => $greek_layer_val }
 
-  keyremap4macbook::private_xml{ 'private.xml': source => 'puppet:///modules/modern_space_cadet/private.xml' }
+  karabiner::private_xml{ 'private.xml': source => 'puppet:///modules/modern_space_cadet/private.xml' }
 }

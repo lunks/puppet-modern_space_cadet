@@ -1,6 +1,5 @@
 mod 'boxen',             '3.6.2', :github_tarball => 'boxen/puppet-boxen'
 mod 'osx',               '2.7.0', :github_tarball => 'boxen/puppet-osx'
-mod 'keyremap4macbook',  '1.2.2', :github_tarball => 'boxen/puppet-keyremap4macbook'
-mod 'seil',              '0.0.1', :github_tarball => 'boxen/puppet-seil'
-mod 'property_list_key', '0.2.0', :github_tarball => 'glarizza/puppet-property_list_key'
+mod 'karabiner',         '1.0.4', :github_tarball => 'boxen/puppet-karabiner'
+mod 'seil',              '1.0.2', :github_tarball => 'boxen/puppet-seil'
 mod 'stdlib',            '4.2.1', :github_tarball => 'puppetlabs/puppetlabs-stdlib'
