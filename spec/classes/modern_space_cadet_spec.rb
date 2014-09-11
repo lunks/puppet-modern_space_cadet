@@ -10,6 +10,7 @@ describe 'modern_space_cadet' do
     })
 
     should include_class('karabiner')
+    should contain_karabiner__profile('Default')
     should contain_karabiner__remap('controlL2controlL_escape')
     should contain_karabiner__set('parameter.keyoverlaidmodifier_timeout').with({
       :value => 300

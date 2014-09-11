@@ -23,6 +23,7 @@ class modern_space_cadet(
   include seil::login_item
 
   include karabiner
+  karabiner::profile{ 'Default': }
 
   if ($capslock_to_control_plus_escape) {
     karabiner::remap{ 'controlL2controlL_escape': }
