@@ -29,18 +29,12 @@ class modern_space_cadet(
     karabiner::remap{ 'controlL2controlL_escape': }
     karabiner::set{ 'parameter.keyoverlaidmodifier_timeout': value => 300 }
 
-    $capslock_mappings = { 'capslock' => 59 }
-  } else {
-    $capslock_mappings = { }
+    seil::map { 'capslock': value => 59}
   }
 
   if ($left_control_to_hyper) {
-    $hyper_mappings = { 'control_l' => 80 }
-  } else {
-    $hyper_mappings = { }
+    seil::map { 'control_l': value => 80}
   }
-
-  seil::bind{ 'seil mappings': mappings => merge($hyper_mappings, $capslock_mappings) }
 
   karabiner::set{ 'space_cadet.left_control_to_hyper': value => $left_control_to_hyper_val }
   karabiner::set{ 'space_cadet.force_correct_shifts':  value => $force_correct_shifts_val }
