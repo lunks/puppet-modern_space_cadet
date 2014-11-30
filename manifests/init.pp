@@ -21,7 +21,7 @@ class modern_space_cadet(
 
   include karabiner
   karabiner::profile{ 'Default': }
-(
+
   seil::map { 'capslock': value => 53}
   
 
